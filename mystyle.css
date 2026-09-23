@@ -1,0 +1,454 @@
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+
+    background:
+        radial-gradient(circle at 15% 20%, #ffd6e7 0 5%, transparent 6%),
+        radial-gradient(circle at 85% 25%, #ffe8b6 0 4%, transparent 5%),
+        linear-gradient(135deg, #ffb6d5, #c7b5ff, #9edfff);
+
+    overflow-x: hidden;
+    padding: 40px 20px;
+}
+
+
+/* =========================
+   BIRTHDAY CARD
+========================= */
+
+.card {
+    position: relative;
+
+    width: min(620px, 95vw);
+    max-height: 90vh;
+
+    padding: 45px 50px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.90);
+
+    border: 2px solid rgba(255,255,255,0.9);
+
+    border-radius: 35px;
+
+    box-shadow:
+        0 25px 70px rgba(91, 54, 120, 0.25),
+        inset 0 0 30px rgba(255,255,255,0.8);
+
+    overflow-y: auto;
+
+    animation: appear 1.2s ease;
+}
+
+
+/* Scrollbar */
+
+.card::-webkit-scrollbar {
+    width: 7px;
+}
+
+.card::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.card::-webkit-scrollbar-thumb {
+    background: #efa1c2;
+    border-radius: 10px;
+}
+
+
+/* =========================
+   SPARKLES
+========================= */
+
+.sparkles {
+    color: #ff75a9;
+    font-size: 25px;
+    letter-spacing: 12px;
+
+    margin-bottom: 15px;
+
+    animation: sparkle 2s infinite;
+}
+
+
+/* =========================
+   SMALL TITLE
+========================= */
+
+.small-text {
+    font-size: 11px;
+    letter-spacing: 4px;
+
+    color: #9c7aa8;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   MAIN TITLE
+========================= */
+
+h1 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(45px, 8vw, 70px);
+
+    line-height: 0.95;
+
+    color: #59406b;
+
+    margin-bottom: 15px;
+}
+
+h1 span {
+    color: #f45f99;
+    font-style: italic;
+}
+
+
+/* =========================
+   CAKE
+========================= */
+
+.cake {
+    font-size: 75px;
+
+    margin: 10px 0;
+
+    filter:
+        drop-shadow(0 10px 10px rgba(0,0,0,0.15));
+
+    animation: cakeFloat 3s ease-in-out infinite;
+}
+
+
+/* =========================
+   SUBTITLE
+========================= */
+
+h2 {
+    color: #704d7d;
+
+    font-size: 23px;
+
+    margin: 8px 0 22px;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message {
+    color: #6e6472;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    text-align: left;
+}
+
+.message p {
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   DIVIDER
+========================= */
+
+.divider {
+    text-align: center;
+
+    margin: 25px 0;
+
+    color: #f17ca8;
+
+    font-size: 20px;
+}
+
+
+/* =========================
+   FINAL MESSAGE
+========================= */
+
+.final-message {
+    text-align: center;
+
+    font-size: 19px;
+
+    font-weight: bold;
+
+    color: #d9578d;
+}
+
+.wish {
+    text-align: center;
+
+    color: #d9578d;
+
+    font-weight: bold;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    margin-top: 30px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #f0d6e3;
+
+    font-size: 12px;
+
+    color: #a28ba9;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   BALLOONS
+========================= */
+
+.balloon {
+    position: fixed;
+
+    font-size: 70px;
+
+    z-index: -1;
+
+    animation:
+        balloonFloat 5s ease-in-out infinite;
+}
+
+.balloon1 {
+    left: 4%;
+    top: 12%;
+}
+
+.balloon2 {
+    right: 5%;
+    top: 10%;
+
+    animation-delay: 1s;
+}
+
+.balloon3 {
+    left: 7%;
+    bottom: 10%;
+
+    animation-delay: 2s;
+}
+
+.balloon4 {
+    right: 7%;
+    bottom: 12%;
+
+    animation-delay: 3s;
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+.confetti {
+    position: fixed;
+
+    width: 12px;
+    height: 25px;
+
+    border-radius: 5px;
+
+    animation: fall 5s linear infinite;
+
+    z-index: -1;
+}
+
+.c1 {
+    left: 15%;
+    top: -30px;
+    background: #ff6fae;
+}
+
+.c2 {
+    left: 30%;
+    top: -50px;
+    background: #8d7cff;
+    animation-delay: 1s;
+}
+
+.c3 {
+    left: 50%;
+    top: -20px;
+    background: #ffc857;
+    animation-delay: 2s;
+}
+
+.c4 {
+    left: 70%;
+    top: -60px;
+    background: #61c0bf;
+    animation-delay: 0.5s;
+}
+
+.c5 {
+    left: 85%;
+    top: -40px;
+    background: #ff8c69;
+    animation-delay: 1.5s;
+}
+
+.c6 {
+    left: 40%;
+    top: -80px;
+    background: #b084cc;
+    animation-delay: 3s;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(40px)
+            scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes cakeFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+@keyframes sparkle {
+
+    0%, 100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+}
+
+
+@keyframes balloonFloat {
+
+    0%, 100% {
+        transform:
+            translateY(0)
+            rotate(-5deg);
+    }
+
+    50% {
+        transform:
+            translateY(-25px)
+            rotate(5deg);
+    }
+}
+
+
+@keyframes fall {
+
+    0% {
+        transform:
+            translateY(-100px)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px 10px;
+    }
+
+    .card {
+        width: 95vw;
+
+        max-height: 92vh;
+
+        padding: 35px 25px;
+
+        border-radius: 28px;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+
+    .cake {
+        font-size: 60px;
+    }
+
+    .message {
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+    .balloon {
+        font-size: 45px;
+    }
+}
+```
